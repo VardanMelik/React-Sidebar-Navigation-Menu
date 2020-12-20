@@ -1,7 +1,13 @@
 import { Switch } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Products from './pages/Products';
+import Reports from './pages/Reports';
+import Team from './pages/Team';
+import Messages from './pages/Messages';
+import Support from './pages/Support';
 
 function App() {
   return (
@@ -9,7 +15,12 @@ function App() {
       <Router>
       <Navbar/>
         <Switch>
-          <Route path="/" />
+          <Route path="/" exact component={Home} />
+          <Route path="/reports" component={Reports} />
+          <Route path="/products" component={Products} />
+          <Route path="/team" component={Team} />
+          <Route path="/messages" component={Messages} />
+          <Route path="/support" component={Support} />
         </Switch>
       </Router>
     </>
